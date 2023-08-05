@@ -21,6 +21,7 @@ class Homework::API < Grape::API
       Homework.logger.info('Authorized')
     else
       Homework.logger.info('Unauthorized')
+      error!({ error: 'Unauthorized' }, 401)
     end
   end
 
